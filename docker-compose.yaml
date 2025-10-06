@@ -1,0 +1,17 @@
+version: '3'
+services:
+   dash:
+    #command: python app.py
+    # command: tail -f /dev/null
+    image: mlassignment:a3
+    build: 
+      context: .
+      dockerfile: .Dockerfile
+    ports:
+      - 9999:8050
+    volumes:
+      - ./source_code:/root/code
+      - ./vscode-server:/root/.vscode-server
+    env_file:
+      - .env
+
